@@ -1,7 +1,7 @@
 export default {
     'zh-cn': {
         i18n: {
-            breadcrumb: '国际化产品',
+            breadcrumb: '感觉很唬人的国际化',
             tips: '通过切换语言按钮，来改变当前内容的语言。',
             btn: '切换英文',
             title1: '常用用法',
@@ -12,7 +12,7 @@ export default {
     },
     'en': {
         i18n: {
-            breadcrumb: 'International Products',
+            breadcrumb: 'feel niubi International Products',
             tips: 'Click on the button to change the current language. ',
             btn: 'Switch Chinese',
             title1: 'Common usage',

@@ -1,4 +1,4 @@
-import request from '../utils/request';
+import request from '../utils/request/base_request';
 
 export const fetchData = query => {
     return request({

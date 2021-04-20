@@ -2,7 +2,9 @@ import {createStore} from 'vuex'
 
 export default createStore({
     state: {
+        // 用于tag遍历
         tagsList: [],
+        // 标签栏变量，用于决定是否折叠，与header有关
         collapse: false
     },
     mutations: {
@@ -52,5 +54,6 @@ export default createStore({
         }
     },
     actions: {},
+    // 模块化，key:value key->module.name  value-> import modele
     modules: {}
 })

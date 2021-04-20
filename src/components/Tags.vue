@@ -1,4 +1,5 @@
 <template>
+<!-- 小标签页，用vuex进行管理是否遍历 -->
     <div class="tags" v-if="showTags">
         <ul>
             <li

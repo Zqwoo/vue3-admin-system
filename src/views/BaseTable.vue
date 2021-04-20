@@ -110,6 +110,7 @@
 </template>
 
 <script>
+// 该请求是请求本地静态资源的json文件，相当于请求自己的数据，用于展示效果，后面会更改
 import { fetchData } from "../api/index";
 export default {
     name: "basetable",

@@ -8,19 +8,6 @@
         <div class="logo">后台管理系统</div>
         <div class="header-right">
             <div class="header-user-con">
-                <!-- 消息中心 -->
-                <div class="btn-bell">
-                    <el-tooltip
-                        effect="dark"
-                        :content="message?`有${message}条未读消息`:`消息中心`"
-                        placement="bottom"
-                    >
-                        <router-link to="/tabs">
-                            <i class="el-icon-bell"></i>
-                        </router-link>
-                    </el-tooltip>
-                    <span class="btn-bell-badge" v-if="message"></span>
-                </div>
                 <!-- 用户头像 -->
                 <div class="user-avator">
                     <img src="../assets/img/img.jpg" />
@@ -33,7 +20,7 @@
                     </span>
                     <template #dropdown>
                         <el-dropdown-menu>
-                            <a href="https://github.com/lin-xin/vue-manage-system" target="_blank">
+                            <a href="#" target="_blank">
                                 <el-dropdown-item>项目仓库</el-dropdown-item>
                             </a>
                             <el-dropdown-item divided command="loginout">退出登录</el-dropdown-item>
@@ -47,17 +34,16 @@
 <script>
 export default {
     data() {
-        return {
-            fullscreen: false,
-            name: "linxin",
-            message: 2
-        };
+        return {};
     },
     computed: {
+        //
         username() {
+            // 这是从localStorage中取登录的用户名，这里后面可能要改，用户名的获取从store的个人信息库中获取，若没登录则不允许登入后台系统
             let username = localStorage.getItem("ms_username");
-            return username ? username : this.name;
+            return username ;
         },
+        // 当前页面是否要折叠，从store中映射，点击后将取反的值通过store.commit进行mutation取反，
         collapse() {
             return this.$store.state.collapse;
         }
@@ -65,17 +51,19 @@ export default {
     methods: {
         // 用户名下拉菜单选择事件
         handleCommand(command) {
+            // 退出登录操作，后面换成js-cookie的删除操作
             if (command == "loginout") {
                 localStorage.removeItem("ms_username");
                 this.$router.push("/login");
             }
         },
-        // 侧边栏折叠
+        // 侧边栏折叠 ->进一步了解
         collapseChage() {
             this.$store.commit("hadndleCollapse", !this.collapse);
         }
     },
     mounted() {
+        // 当页面加载时，计算是否可视宽度决定是否要折叠
         if (document.body.clientWidth < 1500) {
             this.collapseChage();
         }
@@ -110,33 +98,6 @@ export default {
     display: flex;
     height: 70px;
     align-items: center;
-}
-.btn-fullscreen {
-    transform: rotate(45deg);
-    margin-right: 5px;
-    font-size: 24px;
-}
-.btn-bell,
-.btn-fullscreen {
-    position: relative;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    border-radius: 15px;
-    cursor: pointer;
-}
-.btn-bell-badge {
-    position: absolute;
-    right: 0;
-    top: -2px;
-    width: 8px;
-    height: 8px;
-    border-radius: 4px;
-    background: #f56c6c;
-    color: #fff;
-}
-.btn-bell .el-icon-bell {
-    color: #fff;
 }
 .user-name {
     margin-left: 10px;

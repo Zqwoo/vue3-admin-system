@@ -4,6 +4,7 @@
             <el-breadcrumb separator="/">
                 <el-breadcrumb-item>
                     <i class="el-icon-lx-global"></i>
+                    <!-- 这里的$t是i18n库创建的对象？（推测），这里相当于取proxy.$t.breadcrumb -->
                     {{$t('i18n.breadcrumb')}}
                 </el-breadcrumb-item>
             </el-breadcrumb>
@@ -12,7 +13,7 @@
             <span>{{$t('i18n.tips')}}</span>
             <el-button
                 type="primary"
-                @click="$i18n.locale = $i18n.locale === 'zh-cn'?'en':'zh-cn';"
+                @click="aaa"
             >{{$t('i18n.btn')}}</el-button>
             <div class="list">
                 <h2>{{$t('i18n.title1')}}</h2>
@@ -26,7 +27,13 @@
 
 <script>
 export default {
-    name: "i18n"
+    name: "i18n",
+    methods:{
+        aaa(){
+            console.log(this.$i18n.locale)
+            this.$i18n.locale = this.$i18n.locale === 'zh-cn'?'en':'zh-cn';
+        }
+    }
 };
 </script>
 
