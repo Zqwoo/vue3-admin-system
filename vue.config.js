@@ -1,4 +1,9 @@
 module.exports = {
+ /*  chainWebpack: config => {
+    config.resolve.extensions
+      .add('ts')
+      .add('tsx');
+}, */
   devServer: {
     proxy: {
       "/dev-api": {
@@ -9,5 +14,4 @@ module.exports = {
       }
     }
   }
-  
 }

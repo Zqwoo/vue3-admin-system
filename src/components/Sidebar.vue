@@ -71,11 +71,6 @@ export default {
                     title: "基础表格"
                 },
                 {
-                    icon: "el-icon-lx-copy",
-                    index: "tabs",
-                    title: "tab选项卡"
-                },
-                {
                     icon: "el-icon-lx-calendar",
                     index: "3",
                     title: "表单相关",

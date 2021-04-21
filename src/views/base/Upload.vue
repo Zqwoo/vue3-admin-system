@@ -84,7 +84,7 @@ export default {
     name: "upload",
     data() {
         return {
-            defaultSrc: require("../assets/img/img.jpg"),
+            defaultSrc: require("../../assets/img/img.jpg"),
             fileList: [],
             imgSrc: "",
             cropImg: "",

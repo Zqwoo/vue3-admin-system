@@ -1,5 +1,5 @@
 import {createRouter, createWebHistory} from "vue-router";
-import Home from "../views/Home.vue";
+import Home from "../views/base/Home.vue";
 
 const routes = [
     {
@@ -18,7 +18,7 @@ const routes = [
                 },
                 component: () => import (
                 /* webpackChunkName: "dashboard" */
-                "../views/Dashboard.vue")
+                "../views/base/Dashboard.vue")
             }, {
                 path: "/table",
                 name: "basetable",
@@ -27,7 +27,7 @@ const routes = [
                 },
                 component: () => import (
                 /* webpackChunkName: "table" */
-                "../views/BaseTable.vue")
+                "../views/base/BaseTable.vue")
             }, {
                 path: "/charts",
                 name: "basecharts",
@@ -36,7 +36,7 @@ const routes = [
                 },
                 component: () => import (
                 /* webpackChunkName: "charts" */
-                "../views/BaseCharts.vue")
+                "../views/base/BaseCharts.vue")
             }, {
                 path: "/form",
                 name: "baseform",
@@ -45,17 +45,8 @@ const routes = [
                 },
                 component: () => import (
                 /* webpackChunkName: "form" */
-                "../views/BaseForm.vue")
+                "../views/base/BaseForm.vue")
             }, {
-                path: "/tabs",
-                name: "tabs",
-                meta: {
-                    title: 'tab标签'
-                },
-                component: () => import (
-                /* webpackChunkName: "tabs" */
-                "../views/Tabs.vue")
-            },  {
                 path: "/permission",
                 name: "permission",
                 meta: {
@@ -64,7 +55,7 @@ const routes = [
                 },
                 component: () => import (
                 /* webpackChunkName: "permission" */
-                "../views/Permission.vue")
+                "../views/base/Permission.vue")
             }, {
                 path: "/i18n",
                 name: "i18n",
@@ -73,7 +64,7 @@ const routes = [
                 },
                 component: () => import (
                 /* webpackChunkName: "i18n" */
-                "../views/I18n.vue")
+                "../views/base/I18n.vue")
             }, {
                 path: "/upload",
                 name: "upload",
@@ -82,7 +73,7 @@ const routes = [
                 },
                 component: () => import (
                 /* webpackChunkName: "upload" */
-                "../views/Upload.vue")
+                "../views/base/Upload.vue")
             }, {
                 path: "/icon",
                 name: "icon",
@@ -91,7 +82,7 @@ const routes = [
                 },
                 component: () => import (
                 /* webpackChunkName: "icon" */
-                "../views/Icon.vue")
+                "../views/base/Icon.vue")
             }, {
                 path: '/404',
                 name: '404',
@@ -99,7 +90,7 @@ const routes = [
                     title: '找不到页面'
                 },
                 component: () => import (/* webpackChunkName: "404" */
-                '../views/404.vue')
+                '../views/base/404.vue')
             }, {
                 path: '/403',
                 name: '403',
@@ -107,7 +98,7 @@ const routes = [
                     title: '没有权限'
                 },
                 component: () => import (/* webpackChunkName: "403" */
-                '../views/403.vue')
+                '../views/base/403.vue')
             }
         ]
     }, {
@@ -118,7 +109,7 @@ const routes = [
         },
         component: () => import (
         /* webpackChunkName: "login" */
-        "../views/Login.vue")
+        "../views/base/Login.vue")
     }
 ];
 
